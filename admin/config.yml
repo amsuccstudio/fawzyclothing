@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "settings"
+    label: "Brand Settings"
+    files:
+      - name: "settings"
+        label: "Site Settings"
+        file: "content/settings.md"
+        fields:
+          - { label: "Brand Name", name: "brand", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Hero Text", name: "hero_text", widget: "text" }
+          - { label: "Contact Text", name: "contact_text", widget: "text" }
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string", hint: "e.g. 07041169276" }
+
+  - name: "gallery"
+    label: "Gallery"
+    label_singular: "Outfit"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Outfit Name", name: "title", widget: "string" }
+      - { label: "Photo", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Price (₦)", name: "price", widget: "number", valueType: "float" }
+
+  - name: "services"
+    label: "Services"
+    label_singular: "Service"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Service Name", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
