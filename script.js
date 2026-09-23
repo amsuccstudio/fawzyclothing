@@ -48,7 +48,7 @@ function whatsappLink(phone, message) {
 
 // --- Load settings ---
 async function loadSettings() {
-  const s = await fetchOne('/content/settings.md');
+  const s = await fetchOne('/data/settings.md');
   if (!s) return;
   if (s.brand) {
     document.getElementById('brandName').textContent = s.brand;
@@ -68,7 +68,7 @@ async function loadSettings() {
 // --- Gallery ---
 async function renderGallery() {
   const grid = document.getElementById('galleryGrid');
-  const items = await fetchCollection('content/gallery');
+  const items = await fetchCollection('data/gallery');
   if (!items.length) return;
   const phone = window.__whatsapp || '07041169276';
 
@@ -92,7 +92,7 @@ async function renderGallery() {
 // --- Services ---
 async function renderServices() {
   const grid = document.getElementById('servicesGrid');
-  const items = await fetchCollection('content/services');
+  const items = await fetchCollection('data/services');
   if (!items.length) return;
 
   grid.innerHTML = items.map(s => `

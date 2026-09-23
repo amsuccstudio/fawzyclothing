@@ -11,7 +11,7 @@ collections:
     files:
       - name: "settings"
         label: "Site Settings"
-        file: "content/settings.md"
+        file: "data/settings.md"
         fields:
           - { label: "Brand Name", name: "brand", widget: "string" }
           - { label: "Tagline", name: "tagline", widget: "string" }
@@ -22,7 +22,7 @@ collections:
   - name: "gallery"
     label: "Gallery"
     label_singular: "Outfit"
-    folder: "content/gallery"
+    folder: "data/gallery"
     create: true
     slug: "{{slug}}"
     fields:
@@ -34,7 +34,7 @@ collections:
   - name: "services"
     label: "Services"
     label_singular: "Service"
-    folder: "content/services"
+    folder: "data/services"
     create: true
     slug: "{{slug}}"
     fields:
